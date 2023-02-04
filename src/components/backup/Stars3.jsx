@@ -4,17 +4,21 @@ import Star from './Star';
 
 function Stars (count) {
   function print_star(ind) {
-    const stars_arr = [];
-    for (let i = 0; i < 5; i++) {
-      stars_arr.push(Star(i));
-    }
-    return (stars_arr)
+    return (
+      <div>
+        <Star key={ind}/>
+      </div>)
   }
 
   return (
     <div>
       <ul className="card-body-stars u-clearfix">
-        {print_star(count)}
+      {[...Array(count).keys()].map((value) => {
+        return(print_star(value))
+        }
+
+      )
+      }
       </ul>
     </div>
   );
