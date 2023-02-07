@@ -8,6 +8,8 @@ function Stars (count) {
     for (let i = 0; i < 5; i++) {
       stars_arr.push(Star(i));
     }
+    //[...Array(count).fill()].map((_,idx) => <li key={idx}><Star /></li>);
+
     return (stars_arr)
   }
 
